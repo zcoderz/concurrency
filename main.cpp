@@ -10,10 +10,10 @@
 #include <string>
 #include <thread>
 
-//int main() {
-//    SimpleMutexAndLock simpleMutexAndLock;
-//    simpleMutexAndLock.run();
-//    //OddEvenRuns oddEvenRuns;
-//    //oddEvenRuns.runOddEvenThreads(50);
-//    return 0;
-//}
+int main() {
+    SimpleMutexAndLock simpleMutexAndLock;
+    simpleMutexAndLock.run();
+    //OddEvenRuns oddEvenRuns;
+    //oddEvenRuns.runOddEvenThreads(50);
+    return 0;
+}

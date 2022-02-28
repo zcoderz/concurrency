@@ -9,16 +9,16 @@
 #include <queue>
 
 template<typename T>
-class concurrent_queue
+class thread_safe_queue
 {
 private:
     mutable std::mutex mut;
     std::queue<T> data_queue;
     std::condition_variable data_cond;
 public:
-    concurrent_queue()
+    thread_safe_queue()
     {}
-    concurrent_queue(concurrent_queue const& other)
+    thread_safe_queue(thread_safe_queue const& other)
     {
         std::lock_guard<std::mutex> lk(other.mut);
         data_queue=other.data_queue;
