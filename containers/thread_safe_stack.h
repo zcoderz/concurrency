@@ -2,8 +2,8 @@
 // Created by usman on 2/24/22.
 //
 
-#ifndef CONCURRENCY_CONCURRENTSTACK_H
-#define CONCURRENCY_CONCURRENTSTACK_H
+#ifndef CONCURRENCY_THREAD_SAFE_STACK_H
+#define CONCURRENCY_THREAD_SAFE_STACK_H
 
 #include <stack>
 #include <mutex>
@@ -58,6 +58,7 @@ public:
         std::lock_guard<std::mutex> lock(m);
         return data.empty();
     }
+
 };
 
-#endif //CONCURRENCY_CONCURRENTSTACK_H
+#endif //CONCURRENCY_THREAD_SAFE_STACK_H

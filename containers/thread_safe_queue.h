@@ -2,8 +2,8 @@
 // Created by usman on 2/24/22.
 //
 
-#ifndef CONCURRENCY_CONCURRENTQUEUE_H
-#define CONCURRENCY_CONCURRENTQUEUE_H
+#ifndef CONCURRENCY_THREAD_SAFE_QUEUE_H
+#define CONCURRENCY_THREAD_SAFE_QUEUE_H
 #include <mutex>
 #include <condition_variable>
 #include <queue>
@@ -74,4 +74,4 @@ public:
         return data_queue.empty();
     }
 };
-#endif //CONCURRENCY_CONCURRENTQUEUE_H
+#endif //CONCURRENCY_THREAD_SAFE_QUEUE_H

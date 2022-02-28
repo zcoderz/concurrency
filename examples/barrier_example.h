@@ -15,7 +15,8 @@ class BarrierExample {
         const auto workers = {"anil", "busara", "carl"};
 
         /**
-         * this method is set to be called when the barrier reaches 0 (i.e arrive_and_wait has been called N times)
+         * this method is set to be called when the barrier reaches 0 (i.e arrive_and_wait has been called N times).
+         * it will only be called once
          */
         auto on_completion = []() noexcept {
             // locking not needed here
