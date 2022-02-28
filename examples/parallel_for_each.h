@@ -6,20 +6,11 @@
 #define CONCURRENCY_PARALLEL_FOR_EACH_H
 #include <future>
 #include <algorithm>
+#include "../utils/thread_joinable.h"
 template<typename Iterator,typename Func>
 class ParallelForEach {
 private:
-    struct join_threads
-    {
-        std::vector<std::thread> &_threads;
-        join_threads(std::vector<std::thread> &threads_) : _threads(threads_)
-        {}
-        ~join_threads() {
-            for (std::thread & thread: _threads) {
-                thread.join();
-            }
-        }
-    };
+
 public:
     void parallel_for_each(Iterator first,Iterator last,Func f)
     {
