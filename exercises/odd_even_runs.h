@@ -2,14 +2,14 @@
 // Created by usman on 2/23/22.
 //
 
-#ifndef CONCURRENCY_ODDEVENRUNS_H
-#define CONCURRENCY_ODDEVENRUNS_H
+#ifndef CONCURRENCY_ODD_EVEN_RUNS_H
+#define CONCURRENCY_ODD_EVEN_RUNS_H
 
 #include <thread>
 #include <mutex>
 #include <condition_variable>
 
-class OddEvenRuns {
+class odd_even_runs {
 public:
     void runOddEvenThreads(int threshold);
 private:
@@ -20,4 +20,4 @@ private:
 };
 
 
-#endif //CONCURRENCY_ODDEVENRUNS_H
+#endif //CONCURRENCY_ODD_EVEN_RUNS_H
