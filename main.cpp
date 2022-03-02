@@ -3,7 +3,7 @@
 #include "exercises/odd_even_runs.h"
 #include "exercises/simple_mutex_and_lock.h"
 #include "examples/parallel_page_visits.h"
-
+#include "examples/background_interruptible_threads.h"
 
 #include <functional>
 #include <iostream>
@@ -14,11 +14,13 @@
 
 
 int main() {
-    ParallelPageVisits parallelPageVisits;
-    std::vector<std::string> lines = parallelPageVisits.create_log_lines();
-    visit_map_type vMap = parallelPageVisits.count_visits_per_page(lines);
-    for (const auto &[k, v] : vMap)
-        std::cout << "m[" << k << "] = (" << v << ") " << std::endl;
+    TestInterruptableThreadsExample interruptableThreadsExample;
+    interruptableThreadsExample.run();
+//    ParallelPageVisits parallelPageVisits;
+//    std::vector<std::string> lines = parallelPageVisits.create_log_lines();
+//    visit_map_type vMap = parallelPageVisits.count_visits_per_page(lines);
+//    for (const auto &[k, v] : vMap)
+//        std::cout << "m[" << k << "] = (" << v << ") " << std::endl;
 
     //simple_mutex_and_lock simpleMutexAndLock;
     //simpleMutexAndLock.run();
