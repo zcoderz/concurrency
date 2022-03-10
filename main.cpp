@@ -4,6 +4,8 @@
 #include "exercises/simple_mutex_and_lock.h"
 #include "examples/parallel_page_visits.h"
 #include "examples/background_interruptible_threads.h"
+#include "examples/parallel_for_each_two.h"
+#include "examples/parallel_transform_reduce.h"
 
 #include <functional>
 #include <iostream>
@@ -14,8 +16,13 @@
 
 
 int main() {
-    TestInterruptableThreadsExample interruptableThreadsExample;
-    interruptableThreadsExample.run();
+    unsigned long const hardware_threads=
+            std::thread::hardware_concurrency();
+
+    ParallelReduce::testMe();
+    //ParallelForEachExample::testMe();
+    //TestInterruptableThreadsExample interruptableThreadsExample;
+    //interruptableThreadsExample.run();
 //    ParallelPageVisits parallelPageVisits;
 //    std::vector<std::string> lines = parallelPageVisits.create_log_lines();
 //    visit_map_type vMap = parallelPageVisits.count_visits_per_page(lines);

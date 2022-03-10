@@ -7,12 +7,13 @@
 #include <future>
 #include <algorithm>
 #include "../utils/thread_joinable.h"
-template<typename Iterator,typename Func>
+
 class ParallelForEach {
 private:
 
 public:
-    void parallel_for_each(Iterator first,Iterator last,Func f)
+    template<typename Iterator,typename Func>
+    static void parallel_for_each(Iterator first,Iterator last,Func f)
     {
         unsigned long const length=std::distance(first,last);
         if(!length)
