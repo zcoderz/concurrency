@@ -6,6 +6,10 @@
 #include "examples/background_interruptible_threads.h"
 #include "examples/parallel_for_each_two.h"
 #include "examples/parallel_transform_reduce.h"
+#include "examples/stop_source_example.h"
+#include "examples/atomicref_and_jthread.h"
+#include "examples/atomic_stack.h"
+#include "examples/atomic_weak.h"
 
 #include <functional>
 #include <iostream>
@@ -19,7 +23,11 @@ int main() {
     unsigned long const hardware_threads=
             std::thread::hardware_concurrency();
 
-    ParallelReduce::testMe();
+    AtomicWeak::main();
+    //StackExample::main();
+    //AtomicRefAndJThreadsExample::main();
+    //StopSourceExample::main();
+    //ParallelReduce::testMe();
     //ParallelForEachExample::testMe();
     //TestInterruptableThreadsExample interruptableThreadsExample;
     //interruptableThreadsExample.run();
